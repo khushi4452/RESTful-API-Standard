@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import { getApiHealth } from './controller/health.js';
+import {postApiBooking} from './controller/booking.js'
 
 
 const app = express();
@@ -26,6 +27,8 @@ const connDB = async () => {
 connDB();
 
 app.get("/api/v1/health", getApiHealth);
+
+app.post("/api/v1/bookings", postApiBooking);
 
 const PORT = process.env.PORT || 3000;
 
