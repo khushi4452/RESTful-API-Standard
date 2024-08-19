@@ -3,14 +3,14 @@ import { Schema, model } from "mongoose";
 const bookingSchema = new Schema(
     {
       user: {
-     type: Schema.Types.ObjectId,
+     type: String,
      ref: "User",
      required: true,  
         },
 
        
      bus: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: "Bus",
      required: true, 
      },     
@@ -45,7 +45,7 @@ const bookingSchema = new Schema(
      type: String,
      required: true,
     },
-    
+
     },
     { timestamps: true }
 );
