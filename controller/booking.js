@@ -1,7 +1,7 @@
 import Booking from "../models/Booking.js";
 
 const postApiBooking = async (req, res) => {
-    const { user, bus, contactNumber, seatNumber, date, isConfirmed, from, to } = req.body; // Updated to use `isConfirmed`
+    const { user, bus, contactNumber, seatNumber, date, isConfirmed, from, to } = req.body; 
 
     const booking = new Booking({  
         user,

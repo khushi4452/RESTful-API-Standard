@@ -6,7 +6,7 @@ const bookingSchema = new Schema(
      type: String,
      ref: "User",
      required: true,  
-        },
+       },
 
        
      bus: {
