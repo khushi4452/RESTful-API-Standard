@@ -1,9 +1,9 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-
-
 dotenv.config();
+
+import { getApiHealth } from './controller/health';
 
 const app = express();
 
@@ -23,6 +23,8 @@ const connDB = async () => {
 };
 
 connDB();
+
+app.get("/api/v1/health", getApiHealth);
 
 const PORT = process.env.PORT || 3000;
 
