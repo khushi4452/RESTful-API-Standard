@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();
 
-import { getApiHealth } from './controller/health';
+import { getApiHealth } from './controller/health.js';
+
 
 const app = express();
 

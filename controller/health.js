@@ -1,8 +1,8 @@
-const getApiHealth = async (req,res) => {
+const getApiHealth = async (req, res) => {
     res.status(200).json({
         success: true,
-        status : "ok",
-
+        status: "ok"
     });
 };
-export {getApiHealth}
+
+export { getApiHealth };
