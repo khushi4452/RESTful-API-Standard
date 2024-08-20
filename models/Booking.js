@@ -2,49 +2,47 @@ import { Schema, model } from "mongoose";
 
 const bookingSchema = new Schema(
     {
-      user: {
-     type: String,
-     ref: "User",
-     required: true,  
-       },
+        user: {
+            type: Schema.Types.ObjectId,  
+            ref: "User",
+            required: true,  
+        },
 
-       
-     bus: {
-    type: String,
-    ref: "Bus",
-     required: true, 
-     },     
+        bus: {
+            type: Schema.Types.ObjectId,  
+            ref: "Bus",
+            required: true, 
+        },     
 
-    contactNumber: {
-     type: String,
-     required: true,
-     },
+        contactNumber: {
+            type: String,
+            required: true,
+        },
 
-     seatNumber: {
-     type: String,
-     required: true,
-     },
+        seatNumber: {
+            type: String,
+            required: true,
+        },
 
-    date: {
-     type: Date,
-     required: true,
-     },
+        date: {
+            type: Date,
+            required: true,
+        },
 
+        isConfirmed: {
+            type: Boolean,
+            default: false,
+        },
 
-    isConfirmed: {
-    type: Boolean,
-    default: false,
-    },
+        from: {
+            type: String,
+            required: true,
+        },
 
-    from: {
-     type: String,
-     required: true,
-    },
-
-     to: {
-     type: String,
-     required: true,
-    },
+        to: {
+            type: String,
+            required: true,
+        },
 
     },
     { timestamps: true }

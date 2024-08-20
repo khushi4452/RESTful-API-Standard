@@ -30,7 +30,7 @@ app.get("/api/v1/health", getApiHealth);
 
 app.post("/api/v1/bookings", postApiBooking);
 
-app.get("/api/v1/bookings");
+app.get("/api/v1/bookings", getApiBookings);
  
 
 const PORT = process.env.PORT || 3000;
