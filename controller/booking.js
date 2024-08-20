@@ -29,4 +29,24 @@ const postApiBooking = async (req, res) => {
     }
 };
 
+const getApiBookings = async (req ,res)=>{
+    try{
+        const allBookings = await Booking.find().populate("user bus");
+        allBookings.forEach((booking) => {
+            booking.user.password = undefined;
+          });
+    res.status(200).json({
+        success: true,
+        data: allBookings,
+        message : "Booking Found Successfully",
+    });      
+
+    } catch (error){
+        res.status(500).json({
+            success: false ,
+            message: error.message || "server Error".
+        });
+    }
+};
+
 export { postApiBooking };
