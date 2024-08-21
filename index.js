@@ -5,7 +5,17 @@ dotenv.config();
 
 import { getApiHealth } from './controller/health.js';
 import { postApiBooking, getApiBookings } from './controller/booking.js';
-import { postApiv1Busses, postApiv2Busses } from "./controller/bus.js";
+import { postApiv1Busses,
+   postApiv2Busses }
+  from "./controller/bus.js";
+  
+import {
+  postApiv1User,
+  putApiv1User,
+  patchApiv1User,
+  DeleteApiv1User,
+} from "./controller/user.js";
+
 
 const app = express();
 
@@ -33,6 +43,11 @@ app.post("/api/v1/bookings", postApiBooking);
 app.get("/api/v1/bookings", getApiBookings);
 app.post("/api/v1/busses", postApiv1Busses);
 app.post("/api/v2/busses", postApiv2Busses);
+
+app.post("/api/v1/users", postApiv1User);
+app.put("/api/v1/users/:id", putApiv1User);
+app.patch("/api/v1/users/:id", patchApiv1User);
+app.delete("/api/v1/users/:id", DeleteApiv1User);
 
 const PORT = process.env.PORT || 3000;
 
