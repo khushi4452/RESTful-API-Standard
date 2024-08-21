@@ -5,7 +5,7 @@ dotenv.config();
 
 import { getApiHealth } from './controller/health.js';
 import { postApiBooking, getApiBookings } from './controller/booking.js';
-
+import { postApiv1Busses, postApiv2Busses } from "./controller/bus.js";
 
 const app = express();
 
@@ -31,7 +31,8 @@ app.get("/api/v1/health", getApiHealth);
 app.post("/api/v1/bookings", postApiBooking);
 
 app.get("/api/v1/bookings", getApiBookings);
- 
+app.post("/api/v1/busses", postApiv1Busses);
+app.post("/api/v2/busses", postApiv2Busses);
 
 const PORT = process.env.PORT || 3000;
 

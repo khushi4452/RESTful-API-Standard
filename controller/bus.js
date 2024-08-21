@@ -21,7 +21,7 @@ const postApiv1Busses = async (req , res) =>{
  }
 };
 
-const postApiv2Busses = aync (req,res)=>{
+const postApiv2Busses = async (req,res)=>{
     const { busNo,
       busType,
       seatType,
